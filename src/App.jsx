@@ -1,14 +1,17 @@
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
+import { CountriesProvider } from "./context/CountriesContext";
 import { ModeProvider } from "./context/ModeContext";
 
 const App = () => {
   return (
     <>
-      <ModeProvider>
-        <Navbar />
-        <Main />
-      </ModeProvider>
+      <CountriesProvider>
+        <ModeProvider>
+          <Navbar />
+          <Main />
+        </ModeProvider>
+      </CountriesProvider>
     </>
   );
 };

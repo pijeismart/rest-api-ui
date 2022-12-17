@@ -4,6 +4,9 @@ import Search from "../assets/Search";
 import ModeContext from "../context/ModeContext";
 import Chevron from "../assets/Chevron";
 import ChevronWhite from "../assets/ChevronWhite";
+import ChevronUp from "../assets/ChevronUp";
+import ChevronUpWhite from "../assets/ChevronUpWhite";
+import Countries from "./Countries";
 
 const Main = () => {
   const { mode } = useContext(ModeContext);
@@ -17,7 +20,7 @@ const Main = () => {
     <main
       className={`${mode ? "bg-white" : "bg-dark-veryDarkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white"
-      } transition-all duration-500 h-[100vh] px-[80px] py-[40px]`}
+      } transition-all duration-500  px-[80px] py-[40px]`}
     >
       <div className="top flex justify-between items-center">
         <div className="input relative">
@@ -46,14 +49,14 @@ const Main = () => {
           <>
             <div className="filter w-[250px] flex items-center space-x-14 bg-white text-light-veryDarkBlue px-[30px] py-[15px] rounded-md shadow-lg transition-all duration-500">
               <button onClick={toggleRegion}>Filter by Region</button>
-              <Chevron />
+              {region ? <Chevron/> : <ChevronUp/>}
             </div>
           </>
         ) : (
           <>
             <div className="filter w-[250px] flex items-center space-x-14 bg-dark-darkBlue text-white px-[30px] py-[15px] rounded-md shadow-lg transition-all duration-500  hover:opacity-50">
               <button onClick={toggleRegion}>Filter by Region</button>
-              <ChevronWhite />
+              {region ? <ChevronWhite/> : <ChevronUpWhite/>}
             </div>
           </>
         )}
@@ -104,6 +107,10 @@ const Main = () => {
           </div>
         </>
       )}
+
+      <div className="bottom pt-[40px] flex flex-wrap justify-between">
+        <Countries/>
+      </div>
     </main>
   );
 };
