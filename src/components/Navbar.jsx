@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav
       className={`${mode ? "bg-white" : "bg-dark-darkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white"
-      } flex justify-between items-center px-[80px] py-[25px]`}
+      } flex justify-between items-center transition-all duration-500 px-[80px] py-[25px]`}
     >
       <div className="left">
         <h1 className="text-2xl font-[800]">Where in the world?</h1>
