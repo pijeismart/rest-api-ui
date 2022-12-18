@@ -1,17 +1,20 @@
 import { createContext, useState, useEffect } from "react";
+import { API_URL } from "../util/api";
 
 const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
 
-  const [countries, setCountries] = useState([]);  
+  const [countries, setCountries] = useState([]); 
+  const [isLoading, setIsLoading] = useState(true); 
 
   const fetchCountries = async () => {
     try {
-      const response = await fetch("https://restcountries.com/v2/all");
+      const response = await fetch(`${API_URL}/all`);
       const data = await response.json();
-      const log = await console.log(data[0].name, data[0].population, data[0].region, data[0].capital, data[0].flag);
+      // const log = await console.log(data[0]);
       setCountries(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +30,7 @@ export const CountriesProvider = ({ children }) => {
     return () => (mounted = false);
   }, []);
 
-  return <CountriesContext.Provider value={{countries, setCountries}}>
+  return <CountriesContext.Provider value={{countries, setCountries , isLoading}}>
             {children}
         </CountriesContext.Provider>;
 };
