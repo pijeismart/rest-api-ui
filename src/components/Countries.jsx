@@ -7,13 +7,11 @@ const Countries = () => {
   const { isLoading } = useContext(CountriesContext);
   const { mode } = useContext(ModeContext);
 
-  console.log(isLoading);
-
   return (
     <>
       {isLoading ? (
         <div className="w-[100px] h-[100vh] mx-auto mt-[200px] font-[800]">
-          <h2 className="text-3xl">Loading...</h2>
+          <h2 className="text-3xl tracking-widest">Loading...</h2>
         </div>
       ) : (
         countries.map((country, idx) => {
@@ -32,7 +30,7 @@ const Countries = () => {
               <div
                 className={`${
                   mode ? "bg-white" : "bg-dark-darkBlue"
-                } text pl-5 pb-10 rounded-b-lg transition-all duration-500`}
+                } text min-h-[230px] pl-5 rounded-b-lg transition-all duration-500`}
               >
                 <h2 className="font-[600] text-xl py-6">{country.name}</h2>
                 <div className="space-y-2">

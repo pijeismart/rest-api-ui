@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import { CountriesProvider } from "./context/CountriesContext";
@@ -10,6 +11,7 @@ const App = () => {
         <ModeProvider>
           <Navbar />
           <Main />
+          <Footer/>
         </ModeProvider>
       </CountriesProvider>
     </>

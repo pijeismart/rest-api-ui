@@ -12,7 +12,7 @@ export const CountriesProvider = ({ children }) => {
     try {
       const response = await fetch(`${API_URL}/all`);
       const data = await response.json();
-      // const log = await console.log(data[0]);
+      const log = await console.log(data[0].region);
       setCountries(data);
       setIsLoading(false);
     } catch (error) {
