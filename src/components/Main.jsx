@@ -38,7 +38,7 @@ const Main = () => {
         <Filter onSelect={getCountryByRegion} />
       </div>
 
-      <div className="bottom pt-[40px] flex flex-wrap justify-between">
+      <div className="bottom pt-[40px] grid grid-cols-1 justify-items-center sm:grid-cols-4">
         <Countries />
       </div>
     </main>

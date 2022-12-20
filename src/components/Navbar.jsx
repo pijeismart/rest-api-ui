@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav
       className={`${mode ? "bg-white" : "bg-dark-darkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white" 
-      } px-[80px] py-[25px] flex justify-between items-center shadow-2xl transition-all duration-500`}
+      } px-[80px] py-[25px] flex justify-between items-center sticky top-0 left-0 w-[100%] z-10 shadow-2xl transition-all duration-500`}
     >
       <div className="left">
         <h1 className="text-2xl font-[800]">Where in the world?</h1>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import CountriesContext from "../context/CountriesContext";
 import ModeContext from "../context/ModeContext";
 
@@ -10,13 +11,13 @@ const Countries = () => {
   return (
     <>
       {isLoading ? (
-        <div className="w-[100px] h-[100vh] mx-auto mt-[200px] font-[800]">
+        <div className="w-[100px] h-[100vh] mt-[200px] font-[800]">
           <h2 className="text-3xl tracking-widest">Loading...</h2>
         </div>
       ) : (
         countries.map((country, idx) => {
           return (
-            <section
+            <Link to={`/country/${country.name}`}
               className="w-[300px] rounded-lg shadow-lg cursor-pointer basis-[21%] mb-[80px]"
               key={idx}
             >
@@ -48,7 +49,7 @@ const Countries = () => {
                   </p>
                 </div>
               </div>
-            </section>
+            </Link>
           );
         })
       )}

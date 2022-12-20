@@ -4,15 +4,14 @@ import { API_URL } from "../util/api";
 const CountriesContext = createContext();
 
 export const CountriesProvider = ({ children }) => {
-
-  const [countries, setCountries] = useState([]); 
-  const [isLoading, setIsLoading] = useState(true); 
+  const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchCountries = async () => {
     try {
       const response = await fetch(`${API_URL}/all`);
       const data = await response.json();
-      const log = await console.log(data[0].region);
+      const log = await console.log(data[0]);
       setCountries(data);
       setIsLoading(false);
     } catch (error) {
@@ -30,9 +29,13 @@ export const CountriesProvider = ({ children }) => {
     return () => (mounted = false);
   }, []);
 
-  return <CountriesContext.Provider value={{countries, setCountries , isLoading}}>
-            {children}
-        </CountriesContext.Provider>;
+  return (
+    <CountriesContext.Provider
+      value={{ countries, setCountries, isLoading, setIsLoading }}
+    >
+      {children}
+    </CountriesContext.Provider>
+  );
 };
 
 export default CountriesContext;
