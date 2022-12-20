@@ -24,7 +24,7 @@ const Search = () => {
       <input
         className={`${
           mode ? "bg-white" : "bg-dark-darkBlue"
-        }  font-[600] px-[100px] py-[15px] rounded-md shadow-lg transition-all duration-1000 focus:opacity-50 focus:outline-0`}
+        }  font-[600] px-[100px] py-[15px] w-[500px] rounded-md shadow-lg transition-all duration-1000 focus:opacity-50 focus:outline-0`}
         type="text"
         name="name"
         placeholder="Search for a country..."
