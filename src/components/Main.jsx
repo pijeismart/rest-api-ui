@@ -28,9 +28,9 @@ const Main = () => {
     <main
       className={`${mode ? "bg-white" : "bg-dark-veryDarkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white"
-      } px-[80px] py-[40px]`}
+      } px-[20px] md:px-[80px] py-[40px]`}
     >
-      <div className="top flex justify-between items-center">
+      <div className="top flex flex-col gap-10 md:gap-0 md:flex-row md:justify-between md:items-center">
         <div className="search relative">
           {mode ? <SearchIcon /> : <SearcIconWhite />}
           <Search />

@@ -14,10 +14,10 @@ const Navbar = () => {
     <nav
       className={`${mode ? "bg-white" : "bg-dark-darkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white" 
-      } px-[80px] py-[25px] flex justify-between items-center sticky top-0 left-0 w-[100%] z-10 shadow-2xl`}
+      } px-[20px] sm:px-[80px] py-[25px] flex justify-between items-center sticky top-0 left-0 w-[100%] z-10 shadow-md`}
     >
       <div className="left">
-        <h1 className="text-2xl font-[800]">Where in the world?</h1>
+        <h1 className="sm:text-2xl font-[800]">Where in the world?</h1>
       </div>
       <div
         onClick={handleMode}

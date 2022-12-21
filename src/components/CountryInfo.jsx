@@ -55,7 +55,7 @@ const CountryInfo = () => {
                   Back
                 </Link>
                 <img
-                  className="w-[100%] object-cover block"
+                  className="w-[100%] h-[300px] object-cover block"
                   src={item.flag}
                   alt=""
                 />
