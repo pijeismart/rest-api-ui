@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ModeContext from "../context/ModeContext";
 
-const Filter = ({onSelect}) => {
+const Filter = ({ onSelect }) => {
   const { mode } = useContext(ModeContext);
 
   const selectType = (event) => {

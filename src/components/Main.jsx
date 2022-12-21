@@ -7,11 +7,11 @@ import Countries from "./Countries";
 import Search from "../constants/Search";
 import Filter from "../constants/Filter";
 import { API_URL } from "../util/api";
+import Arrow from "../assets/Arrow";
 
 const Main = () => {
   const { mode } = useContext(ModeContext);
   const { setCountries } = useContext(CountriesContext);
-
 
   const getCountryByRegion = async (regionName) => {
     try {
@@ -28,7 +28,7 @@ const Main = () => {
     <main
       className={`${mode ? "bg-white" : "bg-dark-veryDarkBlue"} ${
         mode ? "text-light-veryDarkBlue" : "text-white"
-      }  px-[80px] py-[40px]`}
+      } px-[80px] py-[40px]`}
     >
       <div className="top flex justify-between items-center">
         <div className="search relative">

@@ -11,7 +11,6 @@ export const CountriesProvider = ({ children }) => {
     try {
       const response = await fetch(`${API_URL}/all`);
       const data = await response.json();
-      const log = await console.log(data[0]);
       setCountries(data);
       setIsLoading(false);
     } catch (error) {
