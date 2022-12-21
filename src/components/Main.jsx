@@ -30,7 +30,7 @@ const Main = () => {
         mode ? "text-light-veryDarkBlue" : "text-white"
       } px-[20px] md:px-[80px] py-[40px]`}
     >
-      <div className="top flex flex-col gap-10 md:gap-0 md:flex-row md:justify-between md:items-center">
+      <div className="top flex flex-col gap-10 xxl:gap-0 xl:flex-row xl:justify-between xl:items-center">
         <div className="search relative">
           {mode ? <SearchIcon /> : <SearcIconWhite />}
           <Search />
@@ -38,7 +38,7 @@ const Main = () => {
         <Filter onSelect={getCountryByRegion} />
       </div>
 
-      <div className="bottom pt-[40px] grid grid-cols-1 justify-items-center sm:grid-cols-4">
+      <div className="bottom pt-[40px] grid grid-cols-1 justify-items-center md:grid-cols-2 md:gap-10 xxl:gap-0 xxl:grid-cols-4">
         <Countries />
       </div>
     </main>

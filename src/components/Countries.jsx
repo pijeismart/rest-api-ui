@@ -18,7 +18,7 @@ const Countries = () => {
         countries.map((country, idx) => {
           return (
             <Link to={`/country/${country.name}`}
-              className="w-[300px] rounded-lg shadow-lg cursor-pointer basis-[21%] mb-[80px]"
+              className="w-[300px] rounded-lg shadow-lg cursor-pointer mb-[80px]"
               key={idx}
             >
               <div className="image h-[200px] w-[100%]">

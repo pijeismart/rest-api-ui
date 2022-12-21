@@ -39,12 +39,12 @@ const CountryInfo = () => {
       <div
         className={`${mode ? "bg-white" : "bg-dark-veryDarkBlue"} ${
           mode ? "text-light-veryDarkBlue" : "text-white"
-        } px-[80px] py-[40px] h-[90vh] flex items-center gap-[150px]`}
+        } px-[25px] lg:px-[80px] py-[40px] lg:h-[100vh] flex flex-col lg:flex-row lg:items-center lg:gap-[150px]`}
       >
         {country.map((item, idx) => {
           return (
             <>
-              <div className="img w-[600px] h-[500px] space-y-20">
+              <div className="img lg:w-[600px] lg:h-[500px] space-y-20">
                 <Link
                   to="/"
                   className={`${
@@ -60,10 +60,10 @@ const CountryInfo = () => {
                   alt=""
                 />
               </div>
-              <div className="info mt-[100px] h-[400px] w-[500px] flex flex-col justify-evenly">
-                <h1 className="text-3xl font-[800]">{item.name}</h1>
-                <div className="country-info flex justify-between">
-                  <div className="left space-y-2">
+              <div className="info mt-[50px] lg:mt-[100px] h-[400px] lg:w-[500px] flex flex-col justify-evenly">
+                <h1 className="text-2xl mt-10 lg:mt-0 lg:text-3xl font-[800]">{item.name}</h1>
+                <div className="country-info flex flex-col lg:flex-row lg:justify-between">
+                  <div className="left space-y-2 my-8">
                     <p>
                       Native Name:{" "}
                       <span className="text-light-darkGray">
@@ -114,7 +114,7 @@ const CountryInfo = () => {
                     </p>
                   </div>
                 </div>
-                <div className="borders space-x-2 flex items-center flex-wrap">
+                <div className="borders space-x-2 mb-12 mt-6 lg:mb-0 flex items-center flex-wrap">
                   <p className="mt-2">Border Countries:</p>
                   {item.borders?.length ? (
                     item.borders.map((country, index) => (
@@ -122,14 +122,14 @@ const CountryInfo = () => {
                         key={index}
                         className={`${
                           mode ? "bg-white" : "bg-dark-darkBlue"
-                        } py-2 px-8 mt-2 rounded-md shadow-lg cursor-pointer`}
+                        } text-[12px] py-2 px-4 lg:px-8 mt-2 rounded-md shadow-lg cursor-pointer`}
                         to={`/`}
                       >
                         <span> {country} </span>
                       </Link>
                     ))
                   ) : (
-                    <p className="mt-2 text-2xl">No borders...</p>
+                    <p className="mt-2 lg:text-2xl">No borders...</p>
                   )}
                 </div>
               </div>
